@@ -8,42 +8,21 @@ const pieParams = { height: 200, width: 300 };
 const oppPallate = ['#A8DF8E', '#ADD8E6', '#36454F'];
 const sectorPallate = ['#ADD8E6', '#36454F'];
 const chartSetting = {
-  yAxis: [
-    {
-      label: "rainfall (mm)"
-    }
-  ],
-  width: 400,
+  width: 300,
   height: 300
 };
 const dataset = [
   {
-    london: 59,
-    paris: 57,
-    newYork: 86,
-    seoul: 21,
-    month: "Jan"
+    value: 2100,
+    lostValue: "Lost"
   },
   {
-    london: 50,
-    paris: 52,
-    newYork: 78,
-    seoul: 28,
-    month: "Fev"
+    value: 150,
+    lostValue: "Withdrawn"
   },
   {
-    london: 47,
-    paris: 53,
-    newYork: 106,
-    seoul: 41,
-    month: "Mar"
-  },
-  {
-    london: 54,
-    paris: 56,
-    newYork: 92,
-    seoul: 73,
-    month: "Apr"
+    value: 150,
+    lostValue: "Aged"
   }
 ];
 
@@ -52,8 +31,8 @@ const valueFormatter = (value) => `${value}mm`;
 export default function Charts() {
   return (
     <Grid container spacing={2}>
-      <Grid item xs={4}>
-        <Typography>Global View - Opportunity</Typography>
+      <Grid item xs={12} sm={6} md={4}>
+        <Typography style={{marginBottom: "60px"}}>Global View - Opportunity</Typography>
         <PieChart
           colors={oppPallate}
           series={[
@@ -68,8 +47,8 @@ export default function Charts() {
           {...pieParams}
         />
       </Grid>
-      <Grid item xs={4}>
-        <Typography>Sector View</Typography>
+      <Grid item xs={12} sm={6} md={4}>
+        <Typography style={{marginBottom: "60px"}}>Sector View</Typography>
         <PieChart
           colors={sectorPallate}
           series={[
@@ -83,12 +62,12 @@ export default function Charts() {
           {...pieParams}
         />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12} sm={6} md={4}>
         <Typography>Lost Opportunities</Typography>
         <BarChart
           dataset={dataset}
-          xAxis={[{ scaleType: "band", dataKey: "month" }]}
-          series={[{ dataKey: "seoul", valueFormatter }]}
+          xAxis={[{ scaleType: "band", dataKey: "lostValue" }]}
+          series={[{ dataKey: "value", valueFormatter }]}
           {...chartSetting}
         />
       </Grid>

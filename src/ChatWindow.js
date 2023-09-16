@@ -20,12 +20,12 @@ const ChatWindow  = () => {
 
   return (
     <Container maxWidth="md" style={{ display: 'flex', flexDirection: 'column', height: '80vh' }}>
-      <Box sx={{ background: '#f0f0f0', padding: '16px' }}>
-        <Typography variant="h5" style={{ textAlign: 'center' }}>
-          Chat with Assistant
+      <Box sx={{ border: '1px solid #D3D3D3', padding: '16px' }}>
+        <Typography style={{ textAlign: 'left', color:'purple' }}>
+          Ask me anything
         </Typography>
       </Box>
-      <Paper elevation={3} style={{ flex: 1, overflowY: 'scroll' }}>
+      <Paper elevation={3} sx={{ border: '1px solid #D3D3D3', flex: 1, overflowY: 'scroll', boxShadow: 0, borderRadius:0 }}>
         <div style={{ padding: '16px' }}>
           {assistantMessage && (
             <div style={{ marginBottom: '8px', textAlign: 'center' }}>
@@ -40,20 +40,21 @@ const ChatWindow  = () => {
         </div>
       </Paper>
       <Divider />
-      <div style={{ display: 'flex', alignItems: 'center', padding: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', paddingTop: '8px' }}>
         <TextField
           fullWidth
           variant="outlined"
           label="Type your message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          sx={{ flexGrow: 1 }}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
               handleSendMessage();
             }
           }}
         />
-        <IconButton color="primary" onClick={handleSendMessage}>
+        <IconButton color="primary" onClick={handleSendMessage} style={{ marginLeft: '-40px', zIndex: '1' }}>
           <SendIcon />
         </IconButton>
       </div>

@@ -29,6 +29,7 @@ export const data = [
     { value: "2000k\n[Dec 23]", color: "" },
     { value: "0k\n[0]", color: "" },
     { value: "1000k\n[Jan 24]", color: "" },
+    { value: "2000", color: "" },
   ],
     innerData: [[
         { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [2500k] were lost with the client in the last quarter due to XYZ reasons. Contact Owner J for more information', "Client A") },
@@ -78,6 +79,7 @@ export const data = [
     { value: "2000k\n[Dec 23]", color: "" },
     { value: "0k\n[0]", color: "" },
     { value: "1000k\n[Jan 24]", color: "" },
+    { value: "2000", color: "" },
   ],
     innerData: [[
         { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [2500k] were lost with the client in the last quarter due to XYZ reasons. Contact Owner J for more information', "Client A") },
@@ -127,6 +129,7 @@ export const data = [
    { value: "2000k\n[Dec 23]", color: "" },
    { value: "0k\n[0]", color: "" },
    { value: "1000k\n[Jan 24]", color: "" },
+   { value: "2000", color: "" },
  ],
    innerData: [[
        { value: "Client A", color: "" },

@@ -26,7 +26,7 @@ const dataset = [
   }
 ];
 
-const valueFormatter = (value) => `${value}mm`;
+const valueFormatter = (value) => `$${value}`;
 
 export default function Charts() {
   return (
@@ -38,7 +38,7 @@ export default function Charts() {
           series={[
             {
               data: [
-                { id: 0, value: 27.7, label: 'Division' },
+                { id: 0, value: 27.7, label: 'New Division' },
                 { id: 1, value: 30.4, label: 'US' },
                 { id: 2, value: 41.9, label: 'EMEA' },
               ],

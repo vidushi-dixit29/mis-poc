@@ -73,7 +73,7 @@ const NestedTable = ({ data, outerColumns, innerColumns }) => {
                           {item.innerData.map((innerItem, innerIndex) => (
                             <StyledTableRow key={innerIndex}>
                             {innerItem.map((innerItemValue) => (
-                              <StyledTableCell color={innerItemValue.color} key={innerIndex}>{innerItemValue.component ? innerItemValue.component : splitContent(innerItemValue.value)}</StyledTableCell>
+                              <StyledTableCell  style={{width:"100%"}} color={innerItemValue.color} key={innerIndex}>{innerItemValue.component ? innerItemValue.component : splitContent(innerItemValue.value)}</StyledTableCell>
                             ))}
                             </StyledTableRow>
                           ))}

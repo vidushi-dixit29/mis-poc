@@ -13,7 +13,6 @@ function createData(name, py, budget, actual, actualCompare, budgetCompare, fore
 }
 
 const rows = [
-  createData('Revenue', 2200, 3400, 3000, 400, 0, 3000),
   createData('Amazon TS Ops', 700, 600, 700, 100, 0, 500),
   createData('Amazon Prime', 700, 600, 700, 100, 0, 500),
   createData('Adobe Creative Cloud', 700, 600, 700, 100, 0, 500),
@@ -61,7 +60,7 @@ const CutomerTable = () => {
 
           {/* Total Row */}
           <TableRow style={{ backgroundColor: "#e0e0e0" }}>
-            <TableCell>Total</TableCell>
+            <TableCell>Revenue</TableCell>
             <TableCell align="center">{totalPy}</TableCell>
             <TableCell align="center">{totalBudget}</TableCell>
             <TableCell align="center">{totalActual}</TableCell>

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mis-poc/static/css/main.2c94c642.css",
+    "main.js": "/mis-poc/static/js/main.e9233d74.js",
+    "static/js/787.ce9020c1.chunk.js": "/mis-poc/static/js/787.ce9020c1.chunk.js",
+    "index.html": "/mis-poc/index.html",
+    "main.2c94c642.css.map": "/mis-poc/static/css/main.2c94c642.css.map",
+    "main.e9233d74.js.map": "/mis-poc/static/js/main.e9233d74.js.map",
+    "787.ce9020c1.chunk.js.map": "/mis-poc/static/js/787.ce9020c1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c94c642.css",
+    "static/js/main.e9233d74.js"
+  ]
+}

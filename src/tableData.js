@@ -15,13 +15,13 @@ const withTooltip = (Component, tooltipText, text) => (
     </Tooltip>
     </div>
   );
-export const outerColumns = ["Markets", "Most Aged \n[Days in a stage]", "Expected Closing\n[Next 2 months]", "Most Value\n[Weighted Deal Value]", "Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5", "Loss"];
+export const outerColumns = ["Markets", "Most Aged \n[Days in a stage]", "Expected Closing\n[Next 2 months]", "Most Value\n[Weighted Deal Value]", "Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5", "Lost Value"];
 export const innerColumns = ["Opportunity", "Sector/Need", "Stage", "Days In Stage", "Expected Closing","Weighted D value", "FY23O", "FY23B", "WOL", "Onwer"];
 export const data = [
   {
    outerData:[
     { value: "EMEA", color: "" },
-    { value: "100\n[Stage 1]", color: "red" },
+    { value: "250\n[Stage 1]", color: "red" },
     { value: "2\n[2150k]", color: "blue" },
     { value: "2000k\n[Stage 4]", color: "purple" },
     { value: "500k\n[Jan 24]", color: "" },
@@ -32,7 +32,7 @@ export const data = [
     { value: "2000", color: "" },
   ],
     innerData: [[
-        { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [2500k] were lost with the client in the last quarter due to XYZ reasons. Contact Owner J for more information', "Client A") },
+        { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [2500k] were lost with the client in the last quarter due to Currency Exchange Fluctuations:. Contact Owner X for more information', "Client A") },
         { value: "Tech/New Content", color: "" },
         { value: "2", color: "" },
         { value: "3", color: "" },
@@ -82,7 +82,7 @@ export const data = [
     { value: "2000", color: "" },
   ],
     innerData: [[
-        { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [2500k] were lost with the client in the last quarter due to XYZ reasons. Contact Owner J for more information', "Client A") },
+        { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [10k] were lost with the client in the last quarter due to Legal Costs. Contact Owner J for more information', "Client A") },
         { value: "Tech/New Content", color: "" },
         { value: "2", color: "" },
         { value: "3", color: "" },
@@ -91,7 +91,7 @@ export const data = [
         { value: "50k", color: "" },
         { value: "5k", color: "" },
         { value: "WOL", color: "" },
-        { value: "X", color: "" },
+        { value: "J", color: "" },
     ],
       [
         { value: "Client B", color: "" },
@@ -121,7 +121,7 @@ export const data = [
 {
   outerData:[
    { value: "New Divisions", color: "" },
-   { value: "100\n[Stage 1]", color: "" },
+   { value: "10\n[Stage 1]", color: "green" },
    { value: "2\n[Stage 2]", color: "blue" },
    { value: "2000k\n[Stage 4]", color: "purple" },
    { value: "500k\n[Jan 24]", color: "" },

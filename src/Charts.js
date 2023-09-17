@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { BarChart } from '@mui/x-charts/BarChart';
+import { styled } from '@mui/material/styles';
 
 const pieParams = { height: 200, width: 300 };
 const oppPallate = ['#A8DF8E', '#ADD8E6', '#36454F'];
@@ -25,6 +26,11 @@ const dataset = [
     lostValue: "Aged"
   }
 ];
+const StyledBarChart = styled(BarChart)`
+  svg {
+    viewBox: '0 100 200 300'
+  }
+`;
 
 const valueFormatter = (value) => `$${value}`;
 

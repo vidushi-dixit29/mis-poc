@@ -1,13 +1,14 @@
-// App.js
 import React from "react";
 import "./App.css";
 import NestedTable from "./NestedTable";
 import BasicTabs from "./Tabs";
-import {data, outerColumns, innerColumns} from "./tableData";
+import { data, outerColumns, innerColumns } from "./tableData";
 import CustomerTable from "./Table";
 import Charts from "./Charts";
 import ChatWindow from "./ChatWindow";
 import Grid from '@mui/material/Grid';
+
+import Header from "./Header";
 
 const App = () => {
   const tabs = [
@@ -20,22 +21,22 @@ const App = () => {
       content: <CustomerTable/>,
     }
   ];
-  
 
   return (
     <div className="App">
-      <h1>Porfolio</h1>
-    <div>
-      <Grid container spacing={2}>
-        <Grid item xs={9}>
-          <Charts/>
-          <BasicTabs tabs={tabs} />
+      <Header />
+
+      <div className="body">
+        <Grid container spacing={2}>
+          <Grid item xs={9}>
+            <Charts/>
+            <BasicTabs tabs={tabs} />
+          </Grid>
+          <Grid item xs={3} >
+            <ChatWindow />
+          </Grid>
         </Grid>
-        <Grid item xs={3} >
-          <ChatWindow />
-        </Grid>
-      </Grid>
-    </div>
+      </div>
     </div>
   );
 };

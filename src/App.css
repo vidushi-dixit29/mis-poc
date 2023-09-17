@@ -1,8 +1,11 @@
-/* src/App.css */
 .App {
-  text-align: center;
-  padding: 20px;
+  padding-top: 0;
 }
+
+.body{
+  padding: 30px;
+}
+
 
 button {
   background-color: #007bff;

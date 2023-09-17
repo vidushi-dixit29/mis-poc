@@ -34,7 +34,7 @@ const CutomerTable = () => {
         <TableHead>
           <TableRow>
             <TableCell></TableCell>
-            <TableCell align="center" style={{ backgroundColor: '#008080', color: 'white' }}>PY</TableCell>
+            <TableCell align="center"  style={{ backgroundColor: '#008080', color: 'white' }}>PY</TableCell>
             <TableCell align="center" style={{ backgroundColor: "#ADD8E6" }}>Budget</TableCell>
             <TableCell align="center" style={{ backgroundColor: '#e1ad01' }}>Actual</TableCell>
             <TableCell align="center" style={{ backgroundColor: 'grey', color: 'white' }} colSpan={2}>Actual vs Budget</TableCell>

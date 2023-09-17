@@ -3,7 +3,7 @@ import "./App.css";
 import NestedTable from "./NestedTable";
 import BasicTabs from "./Tabs";
 import { data, outerColumns, innerColumns } from "./tableData";
-import CustomerTable from "./Table";
+import CustomerTable from "./CustomerTable";
 import Charts from "./Charts";
 import ChatWindow from "./ChatWindow";
 import Grid from '@mui/material/Grid';

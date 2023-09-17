@@ -1,82 +1,97 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { PieChart } from '@mui/x-charts/PieChart';
-import { BarChart } from '@mui/x-charts/BarChart';
-import { styled } from '@mui/material/styles';
+import { Grid } from '@mui/material';
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  PieChart, Pie, Cell,
+} from 'recharts';
 
-const pieParams = { height: 200, width: 300 };
-const oppPallate = ['#A8DF8E', '#ADD8E6', '#36454F'];
-const sectorPallate = ['#ADD8E6', '#36454F'];
-const chartSetting = {
-  width: 300,
-  height: 300
-};
-const dataset = [
-  {
-    value: 2100,
-    lostValue: "Lost"
-  },
-  {
-    value: 150,
-    lostValue: "Withdrawn"
-  },
-  {
-    value: 150,
-    lostValue: "Aged"
-  }
+const lossData = [
+  { name: 'Lost', value: 2100 },
+  { name: 'Aged', value: 150 },
+  { name: 'Withdrawn', value: 150 },
 ];
-const StyledBarChart = styled(BarChart)`
-  svg {
-    viewBox: '0 100 200 300'
-  }
-`;
 
-const valueFormatter = (value) => `$${value}`;
+const sectorData = [
+  { name: 'Tech', value: 31 },
+  { name: 'Cosumer', value: 69 },
+];
 
-export default function Charts() {
+const grossOpportunity = [
+  { name: 'US', value: 30.4 },
+  { name: 'EMEA', value: 41.9 },
+  { name: 'New Division', value: 27.7 },
+  
+];
+const grossOpportunityPallate = ['#A8DF8E', '#ADD8E6', '#36454F'];
+
+const colors = ['#0088FE', '#00C49F', '#FFBB28'];
+
+const Charts = () => {
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} md={4}>
-        <Typography style={{marginBottom: "60px"}}>Global View - Opportunity</Typography>
-        <PieChart
-          colors={oppPallate}
-          series={[
-            {
-              data: [
-                { id: 0, value: 27.7, label: 'New Division' },
-                { id: 1, value: 30.4, label: 'US' },
-                { id: 2, value: 41.9, label: 'EMEA' },
-              ],
-            },
-          ]}
-          {...pieParams}
-        />
+    <Grid container spacing={3} style={{paddingBottom:30}}>
+      <Grid item xs={12} md={4}>
+        <h4>Global View - Opportunity</h4>
+          <PieChart width={310} height={230}>
+            <Pie
+              data={grossOpportunity}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              innerRadius={40}
+              outerRadius={70}
+              fill="#8884d8"
+              label={({ name, percent }) => `${(percent * 100).toFixed(0)}%`}
+            >
+              {grossOpportunity.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={grossOpportunityPallate[index % grossOpportunityPallate.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+            <Legend />
+          </PieChart>
       </Grid>
-      <Grid item xs={12} sm={6} md={4}>
-        <Typography style={{marginBottom: "60px"}}>Sector View</Typography>
-        <PieChart
-          colors={sectorPallate}
-          series={[
-            {
-              data: [
-                { id: 0, value: 30, label: 'Tech' },
-                { id: 1, value: 70, label: 'Consume' },
-              ],
-            },
-          ]}
-          {...pieParams}
-        />
+      <Grid item xs={12} md={4}>
+        <div className="chart">
+        <h4>Sector View</h4>
+          <PieChart width={310} height={230}>
+            <Pie
+              data={sectorData}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              innerRadius={40}
+              outerRadius={70}
+              fill="#8884d8"
+              label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+            >
+              {sectorData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+            <Legend />
+          </PieChart>
+        </div>
       </Grid>
-      <Grid item xs={12} sm={6} md={4}>
-        <Typography>Lost Opportunities</Typography>
-        <BarChart
-          dataset={dataset}
-          xAxis={[{ scaleType: "band", dataKey: "lostValue" }]}
-          series={[{ dataKey: "value", valueFormatter }]}
-          {...chartSetting}
-        />
+      <Grid item xs={12} md={4}>
+      <div className="chart">
+          <h4>Lost Opportunities</h4>
+          <BarChart width={300} height={230} data={lossData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="value" fill="#8884d8" />
+          </BarChart>
+        </div>
+        <div className="chart">
+        </div>
       </Grid>
     </Grid>
   );
-}
+};
+
+export default Charts;

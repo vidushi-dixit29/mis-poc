@@ -6,7 +6,7 @@ import WarningIcon from '@mui/icons-material/Warning';
 
 const withTooltip = (Component, tooltipText, text) => (
     <div>{text}&nbsp;&nbsp;
-    <Tooltip title={tooltipText} placement="right-end">
+    <Tooltip  title={<span style={{ fontSize: '14px' }}>{tooltipText}</span>} placement="right-end">
       <IconButton>
         <Badge badgeContent="1" color="error">
           {Component}
@@ -29,7 +29,7 @@ export const data = [
     { value: "2000k\n[Dec 23]", color: "" },
     { value: "0k\n[0]", color: "" },
     { value: "1000k\n[Jan 24]", color: "" },
-    { value: "2000", color: "" },
+    { value: "2100", color: "" },
   ],
     innerData: [[
         { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [2500k] were lost with the client in the last quarter due to Currency Exchange Fluctuations:. Contact Owner X for more information', "Client A") },
@@ -79,7 +79,7 @@ export const data = [
     { value: "2000k\n[Dec 23]", color: "" },
     { value: "0k\n[0]", color: "" },
     { value: "1000k\n[Jan 24]", color: "" },
-    { value: "2000", color: "" },
+    { value: "150", color: "" },
   ],
     innerData: [[
         { value: "Client A", color: "", component: withTooltip(<MessageIcon color="info" />, '2 Opportunities [10k] were lost with the client in the last quarter due to Legal Costs. Contact Owner J for more information', "Client A") },
@@ -129,7 +129,7 @@ export const data = [
    { value: "2000k\n[Dec 23]", color: "" },
    { value: "0k\n[0]", color: "" },
    { value: "1000k\n[Jan 24]", color: "" },
-   { value: "2000", color: "" },
+   { value: "150", color: "" },
  ],
    innerData: [[
        { value: "Client A", color: "" },

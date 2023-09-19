@@ -3,6 +3,7 @@ import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 
 import TableCell from '@mui/material/TableCell';
@@ -11,6 +12,12 @@ import { StyledTable } from "./TableStyle";
 function createData(name, py, budget, actual, actualCompare, budgetCompare, forecast) {
   return { name, py, budget, actual, actualCompare, budgetCompare, forecast };
 }
+
+const StyledTableCell = styled(TableCell)`
+&& {
+  text-align: left;
+}
+`;
 
 const rows = [
   createData('Amazon TS Ops', 700, 600, 700, 100, 0, 500),
@@ -33,12 +40,12 @@ const CutomerTable = () => {
       <StyledTable sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell></TableCell>
-            <TableCell align="center"  style={{ backgroundColor: '#008080', color: 'white' }}>PY</TableCell>
-            <TableCell align="center" style={{ backgroundColor: "#ADD8E6" }}>Budget</TableCell>
-            <TableCell align="center" style={{ backgroundColor: '#e1ad01' }}>Actual</TableCell>
-            <TableCell align="center" style={{ backgroundColor: 'grey', color: 'white' }} colSpan={2}>Actual vs Budget</TableCell>
-            <TableCell align="center" style={{ backgroundColor: '#FFE5B4' }}>Forecast</TableCell>
+            <StyledTableCell></StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: '#008080', color: 'white' }}>PY</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: "#ADD8E6" }}>Budget</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: '#e1ad01' }}>Actual</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: 'grey', color: 'white' }} colSpan={2}>Actual vs Budget</StyledTableCell>
+            <StyledTableCell style={{ backgroundColor: '#FFE5B4' }}>Forecast</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -46,27 +53,27 @@ const CutomerTable = () => {
             <TableRow
               key={row.name}
             >
-              <TableCell>
+              <StyledTableCell>
                 {row.name}
-              </TableCell>
-              <TableCell align="center">{row.py}</TableCell>
-              <TableCell align="center">{row.budget}</TableCell>
-              <TableCell align="center">{row.actual}</TableCell>
-              <TableCell align="center">{row.actualCompare}</TableCell>
-              <TableCell align="center">{row.budgetCompare}</TableCell>
-              <TableCell align="center">{row.forecast}</TableCell>
+              </StyledTableCell>
+              <StyledTableCell>{row.py}</StyledTableCell>
+              <StyledTableCell>{row.budget}</StyledTableCell>
+              <StyledTableCell>{row.actual}</StyledTableCell>
+              <StyledTableCell>{row.actualCompare}</StyledTableCell>
+              <StyledTableCell>{row.budgetCompare}</StyledTableCell>
+              <StyledTableCell>{row.forecast}</StyledTableCell>
             </TableRow>
           ))}
 
           {/* Total Row */}
           <TableRow style={{ backgroundColor: "#e0e0e0" }}>
-            <TableCell>Revenue</TableCell>
-            <TableCell align="center">{totalPy}</TableCell>
-            <TableCell align="center">{totalBudget}</TableCell>
-            <TableCell align="center">{totalActual}</TableCell>
-            <TableCell align="center">{totalActualCompare}</TableCell>
-            <TableCell align="center">{totalBudgetCompare}</TableCell>
-            <TableCell align="center">{totalForecast}</TableCell>
+            <StyledTableCell>Revenue</StyledTableCell>
+            <StyledTableCell>{totalPy}</StyledTableCell>
+            <StyledTableCell>{totalBudget}</StyledTableCell>
+            <StyledTableCell>{totalActual}</StyledTableCell>
+            <StyledTableCell>{totalActualCompare}</StyledTableCell>
+            <StyledTableCell>{totalBudgetCompare}</StyledTableCell>
+            <StyledTableCell>{totalForecast}</StyledTableCell>
           </TableRow>
         </TableBody>
       </StyledTable>
